@@ -11,6 +11,8 @@ int main ()
   int child_status;
 
   child_pid = fork ();
+  fprintf(stderr,"child process - %d\n", getpid());
+	
   if (child_pid > 0) {
     // parent process will sleep for 30 seconds and exit, without a call to wait()
     fprintf(stderr,"parent process - %d\n", getpid());    
