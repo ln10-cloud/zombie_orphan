@@ -10,6 +10,7 @@ int main ()
   pid_t child_pid;
   int child_status;
 
+  //comment to be removed later
   child_pid = fork ();
 	
   if (child_pid > 0) {
