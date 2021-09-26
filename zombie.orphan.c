@@ -36,6 +36,6 @@ int main ()
     fprintf(stderr, "unknown return value of %d from fork() call", child_pid);
     exit (-2);
   }
-
+//aaaaaaaaaaaa
   return 0;
 }
