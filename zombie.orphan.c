@@ -16,14 +16,14 @@ int main ()
     // parent process will sleep for 30 seconds and exit, without a call to wait()
     fprintf(stderr,"parent process - %d\n", getpid());    
 	//Not handle SIG_EXIT from child process
-    sleep(120); 
+    //sleep(120); 
     exit(0);
   }
   else if (child_pid == 0) {
     // child process will exit immediately
     fprintf(stderr,"child process - %d\n", getpid());
 	// IF father process exit without sleep, child process will be ophan process
-//	sleep(120); 
+	sleep(60); 
     exit(0);    
   }
   else if (child_pid == -1) {
@@ -37,5 +37,6 @@ int main ()
     exit (-2);
   }
 
+	
   return 0;
 }
