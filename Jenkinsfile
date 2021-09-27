@@ -5,9 +5,7 @@ pipeline {
       steps {
         sh 'echo "Stage build"'
         sh 'cd $WORKSPACE && ls -al'
-        /*
         sh 'gcc zombie.orphan.c -o zombie.out && chmod u+x zombie.out && ./zombie.out'
-        */
       }
     }
     stage('Unit Test') {
