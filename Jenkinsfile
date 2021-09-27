@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'Stage build'
+        sh 'echo "Stage build"'
+        sh 'cd $WORKSPACE && ls -al'
+        
       }
     }
 
