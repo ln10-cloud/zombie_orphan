@@ -1,11 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('Build') {
       steps {
         sh 'echo "Stage build"'
-        sh 'echo Build_ID : ${env.BUILD_ID}'
-        sh 'echo Build_Number: ${env.BUILD_NUMBER}'
         sh 'cd $WORKSPACE && ls -al'
         /*
         sh 'gcc zombie.orphan.c -o zombie.out && chmod u+x zombie.out && ./zombie.out'
@@ -13,11 +11,23 @@ pipeline {
       }
     }
 
-    stage('unitTest') {
+    stage('Test') {
       steps {
         echo 'Stage unit test'
       }
+      steps {
+        echo 'Stage interface test'
+      }
+      steps {
+        echo 'Stage System test'
+      }
     }
-
+    
+    stage('Delivery') {
+      steps {
+        sh 'echo "Stage Delivery"'
+        sh 'echo "Push image to docker repo"'
+      }
+    }
   }
 }
