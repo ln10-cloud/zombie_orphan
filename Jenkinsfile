@@ -10,19 +10,21 @@ pipeline {
         */
       }
     }
-
-    stage('Test') {
+    stage('Unit Test') {
       steps {
         echo 'Stage unit test'
       }
+     }
+    stage('Interface Test') {
       steps {
         echo 'Stage interface test'
       }
+    }
+    stage('System Test') {
       steps {
         echo 'Stage System test'
       }
     }
-    
     stage('Delivery') {
       steps {
         sh 'echo "Stage Delivery"'
